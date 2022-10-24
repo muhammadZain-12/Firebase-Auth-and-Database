@@ -18,7 +18,8 @@ function SignUp () {
     
     const signUp = () => {
 
-        signUpUser({firstname, lastname, email, password}).then((userCredential) => {
+        signUpUser({firstname, lastname, email, password})
+        .then((userCredential) => {
             // Signed in 
             const user = userCredential;
             console.log(user)

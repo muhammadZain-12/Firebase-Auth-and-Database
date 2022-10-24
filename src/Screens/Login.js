@@ -14,9 +14,10 @@ function LogIn() {
   const [password, setPassword] = useState("");
 
   const logIn = () => {
-    logInUser({ email, password })
-      .then((success) => {
+  
+    logInUser({ email, password }).then((success) => {
         if (success) {
+          console.log(success)
           navigate("/todo", { state: success });
         }
       })

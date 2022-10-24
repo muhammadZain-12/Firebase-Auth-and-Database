@@ -2,7 +2,7 @@ import app from "./firebaseConfig";
 import { getDatabase, onValue, ref, set } from "firebase/database";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+
 
 const auth = getAuth(app);
 const database = getDatabase(app);
@@ -42,9 +42,9 @@ let logInUser = (obj) => {
         onValue(reference, (e) => {
           const status = e.exists();
           if (status) {
-            resolve({ ...e.val(), uid: user.uid });
+            resolve({ ...e.val(),uid: user.uid});
           } else {
-            reject("data not found");
+            reject("data not found"); 
           }
         });
       })
